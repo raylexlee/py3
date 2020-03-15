@@ -1,0 +1,21 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+    //        "args": ["<", "${fileDirname}/qualifiedPangrams.txt"],
+    //        "args": ["<", "${fileDirname}/data0.txt"],
+    //        "args": ["<", "${fileDirname}/testdata/test2.txt"],
+            "args": ["<", "${fileDirname}/testdata/test2.txt", ">", "${fileDirname}/output2.txt"],
+    //        "args": ["<", "${fileDirname}/testdata/test2.txt", ">", "${fileDirname}/output2_v2.txt"],
+    //        "args": [">", "${fileDirname}/test2.txt"],
+            "console": "integratedTerminal"
+        }
+    ]
+}
