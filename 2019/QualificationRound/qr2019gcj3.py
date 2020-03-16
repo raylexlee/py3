@@ -5,7 +5,11 @@
 # Author : Raylex Lee
 #!/usr/bin/python3
 
-import math
+# import math
+def gcd(a, b):
+    while b:
+        a, b = b, divmod(a, b)[1]
+    return a
 
 def Decipher(cipher_list):
     L = len(cipher_list)
@@ -13,7 +17,7 @@ def Decipher(cipher_list):
     secretPrime = dict.fromkeys(range(L + 1))
     for i in range(1, L):
         if cipher_list[i-1] != cipher_list[i]:
-            secretPrime[i] = math.gcd(cipher_list[i-1], cipher_list[i])
+            secretPrime[i] = gcd(cipher_list[i-1], cipher_list[i])
     # Fill up those empty secretPrime[x] == None ** nested recursive function
     def FillUpEmptySecretPrime(pos):
         if secretPrime[pos] != None:
