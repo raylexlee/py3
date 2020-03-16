@@ -17,15 +17,15 @@ for x in f:
 f.close()
 
 
-f = open(os.path.join(dn,"answer2.txt"), "a")
+f = open(os.path.join(dn,"answer100.txt"), "a")
 
 primeListLength = len(primeList)
 pangramListLength = len(pangramList)
 # t = randint(30, 100)
-t = 2
+t = 100
 print(t)
 for i in range(1, t + 1):
-    nn = randint(30, primeListLength-1)
+    nn = randint(70, primeListLength-1)
     zPrime = primeList[nn]
     pangram = pangramList[randint(0, pangramListLength-1)]
     f.write("Case #{}: {}\n".format(i, pangram))

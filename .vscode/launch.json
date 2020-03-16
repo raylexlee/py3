@@ -12,9 +12,11 @@
     //        "args": ["<", "${fileDirname}/qualifiedPangrams.txt"],
     //        "args": ["<", "${fileDirname}/data0.txt"],
     //        "args": ["<", "${fileDirname}/testdata/test2.txt"],
+            "args": ["<", "${fileDirname}/testdata/test100.txt", ">", "${fileDirname}/output100.txt"],
     //        "args": ["<", "${fileDirname}/testdata/test2.txt", ">", "${fileDirname}/output2.txt"],
     //        "args": ["<", "${fileDirname}/testdata/test2.txt", ">", "${fileDirname}/output2_v2.txt"],
     //        "args": [">", "${fileDirname}/test2.txt"],
+    //        "args": [">", "${fileDirname}/test100.txt"],
     //        "args": [">", "${fileDirname}/twotestentries.txt"],
             "console": "integratedTerminal"
         }
