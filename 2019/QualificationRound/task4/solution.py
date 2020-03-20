@@ -3,7 +3,7 @@ from random import randint
 from random import sample
 seed(1)
 N = randint(80,90)
-B = randint(1, 15)
+B = randint(1,min(15, N-1))
 __bad_set = set(sample(range(N), B))
 def _answer_query(N,  bitstring):
     answer = ""
@@ -19,23 +19,24 @@ def TestingBlock(n):
     return tb
 
 tb = TestingBlock(N)
-distort  = _answer_query(N, original)
+distort  = _answer_query(N, tb)
 ds = distort
 bb = len(tb) - len(distort)
-bad_list = []
+bad_set = set()
 j = 0
-while (len(bad_list) < bb): 
+while (len(bad_set) < bb): 
     for i in range(j, len(ds)):
         if tb[i] != ds[i]:
             if i < N-2:    
-                bad_list.append(i)
+                bad_set.add(i)
                 ds = ds[0:i]+tb[i]+ds[i:]
                 j = i+1
                 break
             else:
-                bad_list.append(N-1)
+                bad_set.add(N-1)
 
-
+print(sorted(list(__bad_set)))
+print(sorted(list(bad_set)))
         
 
 #print(original)
