@@ -159,7 +159,13 @@ class Case:
 def getTestCases(test_number):
   F = (10, 5)[test_number]
   # You can edit or add your own test cases here.
-  cases = [Case([1, 2, 3], 4, F), Case([2, 3, 5], 6, F), Case([1000], 1024, F)]
+  T = random.randint(90, 100)
+  cases = []
+  for t in range(T):
+    N = random.randint(900,1024)
+    B = random.randint(10,min(15, N-1))
+    cases.append(Case(sorted(random.sample(range(N), B)), N, F))
+#  cases = [Case([1, 2, 3], 4, F), Case([2, 3, 5], 6, F), Case([1000], 1024, F)]
   return cases
 
 
