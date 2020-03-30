@@ -27,8 +27,6 @@ def TestingBlock(n):
 
 tb = TestingBlock(N)
 ds = [_answer_query(N, tb[y]) for y in range(4)]
-def columnsAreEqual(x):
-    return all(tb[j][x] == ds[j][x] for j in range(4))
 
 bb = len(tb[0]) - len(ds[0])
 bad_set = set()
