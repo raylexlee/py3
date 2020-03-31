@@ -26,7 +26,13 @@ int main() {
         int N, K;
         cin >> N >> K;
         string w[N];
-        for (int j=0; j < N; ++j) cin >> w[j]; 
+        for (int j=0; j < N; ++j) cin >> w[j];
+        if (K == 1) {
+            int m = 0;
+            for (int j=0; j < N; ++j) m += w[j].length();
+            cout << "Case #" << i << ": " << m << endl;    
+            continue;
+        } 
         sort(w, w + N);
         string p[N];
         p[0] = prefixOf(w[0], w[1]);
@@ -64,13 +70,11 @@ int main() {
             c.erase(k);
             if (r == 0) continue;
             j = mlk - 1;
-            while (j > 0) {
-                if (c.count(k.substr(0,j))) {
-                    c[k.substr(0, j)] += r;
-                    break;
-                } 
-                j--;
-            }
+            if (c.count(k.substr(0,j))) {
+                c[k.substr(0, j)] += r;
+            } else {
+                c[k.substr(0, j)] = r;
+            }    
         }
         cout << "Case #" << i << ": " << m << endl;    
     }
